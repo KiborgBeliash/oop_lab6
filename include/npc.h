@@ -10,7 +10,6 @@ enum class NPCType {
     Knight
 };
 
-// Предварительное объявление
 class NPCVisitor;
 
 class NPC {
@@ -58,4 +57,4 @@ public:
     std::string getTypeName() const override;
 };
 
-#endif // NPC_H
+#endif

@@ -8,17 +8,14 @@ void BattleVisitor::visit(Dragon& dragon) {
     
     switch(attacker->getType()) {
         case NPCType::Toad:
-            // Toad eats everyone
             dragon.markDead();
             fightResult = true;
             break;
         case NPCType::Knight:
-            // Knight kills Dragon
             dragon.markDead();
             fightResult = true;
             break;
         case NPCType::Dragon:
-            // Dragons don't fight each other
             fightResult = false;
             break;
         default:
@@ -31,14 +28,12 @@ void BattleVisitor::visit(Toad& toad) {
     
     switch(attacker->getType()) {
         case NPCType::Toad:
-            // Toads eat each other too
             toad.markDead();
-            attacker->markDead(); // Both die
+            attacker->markDead();
             fightResult = true;
             break;
         case NPCType::Dragon:
         case NPCType::Knight:
-            // Toad eats everyone
             toad.markDead();
             fightResult = true;
             break;
@@ -52,17 +47,14 @@ void BattleVisitor::visit(Knight& knight) {
     
     switch(attacker->getType()) {
         case NPCType::Toad:
-            // Toad eats everyone
             knight.markDead();
             fightResult = true;
             break;
         case NPCType::Dragon:
-            // Dragon kills Knight
             knight.markDead();
             fightResult = true;
             break;
         case NPCType::Knight:
-            // Knights don't fight each other
             fightResult = false;
             break;
         default:

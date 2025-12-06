@@ -2,7 +2,7 @@
 #include <memory>
 #include "battle.h"
 #include "observer.h"
-#include "npc_factory.h"  // Добавлен include!
+#include "npc_factory.h"
 
 void printMenu() {
     std::cout << "\n=== Dungeon Editor ===\n";
@@ -46,7 +46,7 @@ int main() {
                 
                 std::cout << "Name: ";
                 std::string name;
-                std::cin.ignore();  // Очищаем буфер
+                std::cin.ignore();
                 std::getline(std::cin, name);
                 
                 if (x < 0 || x > 500 || y < 0 || y > 500) {

@@ -2,7 +2,6 @@
 #include "visitor.h"
 #include <cmath>
 
-// NPC base class
 NPC::NPC(int x, int y, const std::string& name, NPCType type) 
     : x(x), y(y), name(name), type(type), alive(true) {}
 
@@ -30,7 +29,6 @@ std::string NPC::getTypeName() const {
     }
 }
 
-// Dragon
 Dragon::Dragon(int x, int y, const std::string& name) 
     : NPC(x, y, name, NPCType::Dragon) {}
 
@@ -42,7 +40,6 @@ std::string Dragon::getTypeName() const {
     return "Dragon";
 }
 
-// Toad
 Toad::Toad(int x, int y, const std::string& name) 
     : NPC(x, y, name, NPCType::Toad) {}
 
@@ -54,7 +51,6 @@ std::string Toad::getTypeName() const {
     return "Toad";
 }
 
-// Knight
 Knight::Knight(int x, int y, const std::string& name) 
     : NPC(x, y, name, NPCType::Knight) {}
 

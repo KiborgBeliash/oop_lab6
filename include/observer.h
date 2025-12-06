@@ -3,8 +3,7 @@
 
 #include <memory>
 #include <string>
-#include <vector>  // Добавлено!
-
+#include <vector>
 class Observer {
 public:
     virtual ~Observer() = default;
@@ -35,4 +34,4 @@ public:
     void notifyObservers(const std::string& message);
 };
 
-#endif // OBSERVER_H
+#endif

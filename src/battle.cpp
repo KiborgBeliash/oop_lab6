@@ -83,7 +83,6 @@ void Battle::fight(int range) {
             
             if (npcs[i]->isClose(npcs[j], range)) {
                 if (shouldFight(npcs[i], npcs[j])) {
-                    // Attacker i attacks defender j
                     BattleVisitor visitor(npcs[i]);
                     npcs[j]->accept(visitor);
                     
@@ -95,7 +94,6 @@ void Battle::fight(int range) {
                                               npcs[j]->getTypeName() + ")";
                         observable->notifyObservers(message);
                         
-                        // If attacker also died (e.g., toad vs toad)
                         if (!npcs[i]->isAlive()) {
                             message = npcs[j]->getName() + " (" + 
                                       npcs[j]->getTypeName() + 
@@ -114,16 +112,13 @@ void Battle::fight(int range) {
 }
 
 bool Battle::shouldFight(std::shared_ptr<NPC> a, std::shared_ptr<NPC> b) {
-    // Check if these NPC types should fight according to rules
     NPCType typeA = a->getType();
     NPCType typeB = b->getType();
     
-    // Toad fights everyone (including other toads)
     if (typeA == NPCType::Toad || typeB == NPCType::Toad) {
         return true;
     }
     
-    // Dragon vs Knight
     if ((typeA == NPCType::Dragon && typeB == NPCType::Knight) ||
         (typeA == NPCType::Knight && typeB == NPCType::Dragon)) {
         return true;

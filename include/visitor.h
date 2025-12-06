@@ -1,10 +1,9 @@
 #ifndef VISITOR_H
 #define VISITOR_H
 
-#include <memory>  // для std::shared_ptr
-#include "npc.h"   // для NPC и его наследников
+#include <memory>
+#include "npc.h"
 
-// Предварительное объявление
 class Dragon;
 class Toad;
 class Knight;
@@ -31,4 +30,4 @@ public:
     bool getFightResult() const;
 };
 
-#endif // VISITOR_H
+#endif

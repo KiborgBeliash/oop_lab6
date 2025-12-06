@@ -27,4 +27,4 @@ private:
     bool shouldFight(std::shared_ptr<NPC> a, std::shared_ptr<NPC> b);
 };
 
-#endif // BATTLE_H
+#endif

@@ -24,7 +24,6 @@ std::shared_ptr<NPC> NPCFactory::loadFromString(const std::string& data) {
         throw std::runtime_error("Invalid data format");
     }
     
-    // Read the rest as name (may contain spaces)
     std::getline(iss >> std::ws, name);
     
     NPCType type = stringToType(typeStr);

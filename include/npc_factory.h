@@ -3,7 +3,7 @@
 
 #include <memory>
 #include <string>
-#include "npc.h"  // ИСПРАВЛЕНО: было "npc_factory.h"
+#include "npc.h"
 
 class NPCFactory {
 public:
@@ -16,4 +16,4 @@ private:
     static std::string typeToString(NPCType type);
 };
 
-#endif // NPC_FACTORY_H
+#endif
